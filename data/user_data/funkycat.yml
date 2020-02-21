@@ -1,0 +1,13 @@
+--- !ruby/object:User
+username: funkycat
+card_list:
+- !ruby/object:Card
+  to: Somebody
+  from: Me
+  item: gift
+  message_type: tons
+  sender: dorey.edinger@gmail.com
+  recipient: dorey.edinger@gmail.com
+  id: 0
+  sent: false
+  date_sent: 

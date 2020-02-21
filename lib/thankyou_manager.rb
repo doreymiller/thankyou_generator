@@ -8,15 +8,17 @@ require 'pry-remote'
 require 'pry-nav'
 
 require_relative 'user'
+require_relative 'card'
 
 class ThankyouManager
   attr_accessor :user, :username, :messages
 
   def initialize(username)
     @messages = load_messages
+    @username = username
 
-    if user_data_exists?(username)
-      @user = load_data(username)
+    if user_data_exists?
+      @user = load_data
     else
       @user = User.new(username)
 
@@ -34,16 +36,16 @@ class ThankyouManager
     File.write(user_filepath, user_yml)
   end
 
-  def user_filepath(username = user.username)
+  def user_filepath
     File.join(data_path, 'user_data', "#{username}.yml")
   end
 
-  def user_data_exists?(username)
-    File.exist?(user_filepath(username))
+  def user_data_exists?
+    File.exist?(user_filepath)
   end
 
-  def load_data(username)
-    filepath = user_filepath(username)
+  def load_data
+    filepath = user_filepath
     Psych.load_file(filepath)
   end
 
@@ -61,7 +63,7 @@ class ThankyouManager
   end
 
   def create_new_card(card_data)
-    user.card_list.add_card(card_data)
+    user.add_card(card_data)
     update_file
   end
 

@@ -35,6 +35,10 @@ helpers do
     session.delete(:username)
   end
 
+  def valid_route?(id)
+    logged_in? && valid_card_id?(id)
+  end
+
   def valid_credentials?(username, password)
     credentials = load_credentials
 
@@ -176,10 +180,8 @@ helpers do
   def update_card(card_data)
     if edit_mode?
       edit_card(card_data)
-      flash_message('You have edited your thank you card.')
     else
       create_new_card(card_data)
-      flash_message('You have created a new thank you card!')
     end
   end
 
@@ -189,7 +191,6 @@ helpers do
   end
 
   def create_new_card(card_data)
-    # binding.pry
     session[:manager].create_new_card(card_data)
     flash_message('You have created a new thank you card!')
   end
@@ -320,13 +321,14 @@ end
 
 get '/preview/:card_id' do
   id = params[:card_id].to_i
-  redirect '/' if !logged_in? || !valid_card_id?(id)
+  redirect '/' unless valid_route?(id)
   view_saved_card(id)
   erb :preview
 end
 
 get '/edit/:card_id' do
   id = params[:card_id].to_i
+  redirect '/' unless valid_route?(id)
   view_saved_card(id)
   erb :new
 end

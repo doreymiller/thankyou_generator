@@ -11,3 +11,27 @@ pickles: !ruby/string:BCrypt::Password
   cost: 12
   salt: "$2a$12$KqqtnLyhrMFxgEZbd4FRuO"
   checksum: cF/bQCXb1QYV9Sf4NMCPwkFiEAaEs4O
+beesting: !ruby/string:BCrypt::Password
+  str: "$2a$12$EzQdeuv6mNL82eYn0uSCnu5xtukz0CKeOUV0PxZDmgXrJGHSUKzB."
+  version: 2a
+  cost: 12
+  salt: "$2a$12$EzQdeuv6mNL82eYn0uSCnu"
+  checksum: 5xtukz0CKeOUV0PxZDmgXrJGHSUKzB.
+tricky: !ruby/string:BCrypt::Password
+  str: "$2a$12$UePx0ecj.SqpYJfHj/8GieD8eg6cQLw0kYUGeduvPmOGZSwIB1ARi"
+  version: 2a
+  cost: 12
+  salt: "$2a$12$UePx0ecj.SqpYJfHj/8Gie"
+  checksum: D8eg6cQLw0kYUGeduvPmOGZSwIB1ARi
+funkycat: !ruby/string:BCrypt::Password
+  str: "$2a$12$jOiZNY8BeIuJSpP8TxiNA.DEkhnZqM5HvXSAot2alOfoLqnNvAz4q"
+  version: 2a
+  cost: 12
+  salt: "$2a$12$jOiZNY8BeIuJSpP8TxiNA."
+  checksum: DEkhnZqM5HvXSAot2alOfoLqnNvAz4q
+brandnew: !ruby/string:BCrypt::Password
+  str: "$2a$12$Lih8mXAqCXY4Y4.68LFaK.NPL6S/5BF8saM6YX3b99c6rw56J2QXu"
+  version: 2a
+  cost: 12
+  salt: "$2a$12$Lih8mXAqCXY4Y4.68LFaK."
+  checksum: NPL6S/5BF8saM6YX3b99c6rw56J2QXu
