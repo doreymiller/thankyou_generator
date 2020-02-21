@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Thank You Note Generator</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="<%= url('stylesheets/thankyou_app.css') %>" type="text/css">
+    <script src="/javascripts/jquery-3.4.1.js"></script>
+    <script src="/javascripts/application.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h2><a href="/">Thank You Generator</a></h2>
+        <% if logged_in? %> 
+        <div id="signed-in">
+          <div id="signed-in-text">
+            <p>Signed in as <%= session[:username] %></p>
+          </div>
+          <div>
+            <form action="/signout" method="post">
+              <button>Sign Out</button>
+            </form>
+          </div>
+        </div>
+      <% end %>
+    </header>
+
+    <% if session[:message] %>
+     <div class="message">
+      <%= session.delete(:message) %>
+    </div>
+    <% end %>
+
+    <div class="main">
+      <%= yield %>
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,4 @@
+--- !ruby/object:User
+username: gravy
+card_list: !ruby/object:CardCollection
+  cards: []

@@ -1,0 +1,20 @@
+--- !ruby/object:User
+username: sam
+card_list: !ruby/object:CardCollection
+  cards:
+  - !ruby/object:Card
+    to: Somebody
+    from: Dorey
+    item: sweater
+    message_type: ok
+    sender: dorey.edinger@gmail.com
+    recipient: 
+    id: 0
+  - !ruby/object:Card
+    to: Nobody
+    from: Dorey
+    item: book
+    message_type: not
+    sender: dorey.edinger@gmail.com
+    recipient: 
+    id: 1

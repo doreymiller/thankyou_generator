@@ -1,0 +1,6 @@
+myusername: !ruby/string:BCrypt::Password
+  str: "$2a$12$k1HhVuc1H0Nz7mGQQOEMheWXCWkczXu7aeWGTNlQjBPZr44YnMUe6"
+  version: 2a
+  cost: 12
+  salt: "$2a$12$k1HhVuc1H0Nz7mGQQOEMhe"
+  checksum: WXCWkczXu7aeWGTNlQjBPZr44YnMUe6

@@ -1,0 +1,22 @@
+<div id="preview-card">
+
+  <div id="card-bg">
+    <div id="card-message">
+      <p>Dear <%= @card.to %><p>
+      <p><%= @message %></p>
+      <br>
+      <p>Best,</p>
+      <p><%= @card.from %></p>
+    </div>
+  </div>
+
+  <div id="preview-button-set">
+    <form action="/edit/<%= @card.id %>" method="get">
+      <button>Edit</button>
+    </form>
+    <form action = "/send/<%= @card.id %>" method="post">
+      <button>Send</button>
+    </form>
+  </div>
+
+</div>

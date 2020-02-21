@@ -1,0 +1,46 @@
+<% if logged_in? %>
+  
+  <div id="new-card-link">
+    <a href="/new-card">+ New Card</a>
+  </div>
+
+  <% unless @card_list.empty? %>
+  <div id="card-list">
+    <ul>
+        <% sort_cards(@card_list) do |card| %>
+          <li>
+            <div>
+              <% unless card.sent %>
+                <a href="/preview/<%= card.id %>">
+              <% end %>
+                <%= "#{card.to} / #{card.item}" %>
+              <% unless card.sent %>
+                </a>
+              <% end %>
+            </div>
+            <% if card.sent %>
+              <div>
+               <%= card.date_sent_str %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+<% else %>
+  <div id="welcome-text">
+    <p><%= @welcome %></p>
+  </div>
+  <div id="signin">
+    <form action="/signin" method="post">
+      <input type="text" name="username" value="username">
+      <input type="password" name="password" value="password">
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+  <div id="signup">
+    <p>Need an account? <a href="/signup">Sign Up</a></p> 
+  </div>
+<% end %>

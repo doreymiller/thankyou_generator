@@ -1,0 +1,86 @@
+<div id="new-card">
+
+ 
+
+  <div id="card-form">
+
+    <% if edit_mode? %>
+      <form id="new_card_form" action="/edit/<%= @card.id %>" method="post">
+    <% else %>
+      <form id="new_card_form" action="/new-card" method="post">
+    <% end %>
+
+      <div class="form-item">
+        <label for="to">To:</label>
+        <input type="text" name="to" id="to" value="<%= form_value('to', @card) %>">
+      </div>
+
+      <div class="form-item">
+        <label for="from">From:</label>
+        <input type="text" name="from" id="from" value="<%= form_value('from', @card) %>">
+      </div>
+
+      <div class="form-item">
+        <label for="sender">Sender Email:</label>
+        <input type="text" name="sender" id="sender" value="<%= form_value('sender', @card) %>">
+      </div>
+
+      <div class="form-item">
+        <label for="recipient">Recipient Email:</label>
+        <input type="text" name="recipient" id="recipient" value="<%= form_value('recipient', @card) %>">
+      </div>
+
+      <div class="form-item">
+        <label for="item">Gift Item:</label>
+        <input type="text" name="item" id="item" value="<%= form_value('item', @card) %>">
+      </div>
+
+      <div class="radio-form-item">
+        <p>How much did you like the gift? (select one)</p>
+
+        <div>
+          <label for="tons">Tons</label>
+          <%= html_for_message_radio_button("tons", @card) %>
+          
+        </div>
+
+        <div>
+          <label for="tons">Ok</label>
+          <%= html_for_message_radio_button("ok", @card) %>
+          
+        </div>
+
+        <div>
+          <label for="tons">Not So Much</label>
+          <%= html_for_message_radio_button("not", @card) %>
+          
+        </div>
+
+      </div>
+
+      <div>
+
+         <button type="submit"><%= edit_mode? ? "View Card" : "Create Card" %></button>
+      </div>
+
+    </form>
+
+
+  </div>
+
+   <div id="card-bg">
+      <div id="card-message">
+        <p>SAMPLE</p>
+        
+          <p>Dear <%= @card.to %>,<p>
+        
+
+        <p><%= @message %></p>
+        <br>
+        <p>Best,</p>
+        <p><%= @card.from %></p>
+      </div>
+  </div>
+
+
+</div>

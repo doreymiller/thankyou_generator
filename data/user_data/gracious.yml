@@ -1,0 +1,14 @@
+--- !ruby/object:User
+username: gracious
+card_list: !ruby/object:CardCollection
+  cards:
+  - !ruby/object:Card
+    to: Somebody
+    from: Me
+    item: gift
+    message_type: tons
+    sender: dorey.edinger@gmail.com
+    recipient: dorey.edinger@gmail.com
+    id: 0
+    sent: true
+    date_sent: !ruby/object:DateTime 2020-02-19 17:46:57.256874000 -08:00

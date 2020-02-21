@@ -1,0 +1,9 @@
+{
+  welcome: "Welcome to the Thank You Note Generator!  In order to use this site, you must login.  Once you have an account,
+  you can manage, customize, and e-mail those thank you notes that have been bugging you!",
+  messages: {
+    tons: "Thank you so much for the [item]!  I LOVE IT SO MUCH!!!!  You are the best.",
+    ok: "Thank you very much for the [item].  I've always wanted one.  Hope you are well.",
+    not: "Thank you for the [item].  How thoughtful of you.  Really...I mean it."
+  }
+}
