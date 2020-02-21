@@ -1,4 +1,0 @@
---- !ruby/object:User
-username: tub
-card_list: !ruby/object:CardCollection
-  cards: []

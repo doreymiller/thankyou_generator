@@ -1,4 +1,14 @@
 --- !ruby/object:User
 username: pickles
 card_list: !ruby/object:CardCollection
-  cards: []
+  cards:
+  - !ruby/object:Card
+    to: Somebody
+    from: You
+    item: gift
+    message_type: tons
+    sender: dorey.edinger@gmail.com
+    recipient: dorey.edinger@gmail.com
+    id: 0
+    sent: true
+    date_sent: !ruby/object:DateTime 2020-02-21 09:15:54.459155000 -08:00
