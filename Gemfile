@@ -14,7 +14,7 @@ gem 'date'
 gem 'rake'
 gem 'coveralls', require: false
 
-ruby '2.6.5'
+ruby '2.4.1'
 
 group :production do
   gem "puma"
